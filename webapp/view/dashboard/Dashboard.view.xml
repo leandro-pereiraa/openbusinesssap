@@ -1,0 +1,159 @@
+<mvc:View
+	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:tnt="sap.tnt"
+	controllerName="openBusiness.controller.dashboard.Dashboard"
+	xmlns:core="sap.ui.core"
+>
+	<tnt:ToolPage id="toolPage">
+		<tnt:header>
+			<f:ShellBar
+				homeIcon="https://sapui5.hana.ondemand.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png"
+				title="Open Business"
+				showMenuButton="true"
+				showCopilot="false"
+				showNotifications="true"
+				menuButtonPressed="onMenuButtonPress"
+				showProductSwitcher="false"
+				notificationsNumber="true"
+			>
+				<f:profile>
+					<Avatar initials="{oModel>/login}"/>
+				</f:profile>
+			</f:ShellBar>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation
+				selectedKey="{/selectedKey}"
+				itemSelect="onItemSelect"
+			>
+				<tnt:NavigationList items="{path: '/navigation'}">
+					<tnt:NavigationListItem
+						text="{title}"
+						icon="{icon}"
+						enabled="{enabled}"
+						expanded="{expanded}"
+						items="{items}"
+						key="{key}"
+						visible="{oModel>/visible}"
+					>
+						<tnt:NavigationListItem
+							text="{title}"
+							key="{key}"
+							enabled="{enabled}"
+						/>
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList items="{path: '/fixedNavigation'}">
+						<tnt:NavigationListItem
+							text="{title}"
+							icon="{icon}"
+							key="{key}"
+							visible="{visible}"
+						/>
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer
+				id="pageContainer"
+				initialPage="dashboard"
+			>
+				<pages>
+					<ScrollContainer
+						id="dashboard"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.PageTiles" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page0"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Game" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page1"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Clientes" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page2"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Funcionarios" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page3"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Fornecedores" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page4"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Calendario" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page5"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Materiais" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page6"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Servicos" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page7"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Login" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page8"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Logout" type="XML" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page9"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+					>
+						<core:Fragment fragmentName="openBusiness.view.fragments.Map" type="HTML" />
+					</ScrollContainer>
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>
